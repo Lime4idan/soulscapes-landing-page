@@ -266,6 +266,30 @@ a { color: inherit; }
 
 .platform-line { margin: 20px 0 0; color: #aaa5a0; font-size: 11px; }
 
+.platform-notice {
+  max-width: 470px;
+  margin: 15px auto 0;
+  padding: 11px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  background: #f0eeeb;
+  border: 1px solid #d3cfca;
+  color: #807b76;
+  font-size: 11px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.platform-notice strong {
+  display: block;
+  color: #565a65;
+  font-size: 11px;
+}
+
+.device-icon { font-size: 21px; }
+
 .online-dot {
   width: 7px;
   height: 7px;

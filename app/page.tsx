@@ -119,6 +119,13 @@ export default function Home() {
               <p className="platform-line">
                 <span className="online-dot" aria-hidden="true" /> Demo disponível no GX.Games
               </p>
+              <div className="platform-notice" role="note">
+                <span className="device-icon" aria-hidden="true">🖥️</span>
+                <span>
+                  <strong>Somente para computador</strong>
+                  O jogo não está disponível para celulares ou tablets.
+                </span>
+              </div>
             </div>
           </div>
 
@@ -241,9 +248,9 @@ export default function Home() {
             <div className="leaf" aria-hidden="true">⌁</div>
             <p className="eyebrow">A FLORESTA ESTÁ ESPERANDO</p>
             <h2 id="cta-heading">Respire. Entre quando quiser.</h2>
-            <p>A demo de Soulscapes já pode ser jogada gratuitamente no GX.Games.</p>
+            <p>A demo de Soulscapes já pode ser jogada gratuitamente no GX.Games, somente pelo computador.</p>
             <PlayLink className="play-button-large" />
-            <small>O jogo será aberto em uma nova aba.</small>
+            <small>Não disponível para celular ou tablet · o jogo será aberto em uma nova aba.</small>
           </div>
           <div className="status-bar">
             <span>🔒 Concluído</span><span>Internet</span>

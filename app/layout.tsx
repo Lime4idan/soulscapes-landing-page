@@ -10,7 +10,7 @@ export async function generateMetadata(): Promise<Metadata> {
     (host.includes("localhost") ? "http" : "https");
   const base = new URL(`${protocol}://${host}`);
   const description =
-    "Soulscapes é uma experiência calma e sensorialmente acessível. Jogue a demo grátis no GX.Games.";
+    "Soulscapes é uma experiência calma e sensorialmente acessível para computador. Jogue a demo grátis no GX.Games.";
 
   return {
     metadataBase: base,
