@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: base,
     title: "Soulscapes — um jogo sobre encontrar calma",
     description,
-    icons: { icon: "/og.png" },
+    icons: { icon: "/soulscapes-menu.png" },
     openGraph: {
       title: "Soulscapes",
       description,
@@ -24,9 +24,9 @@ export async function generateMetadata(): Promise<Metadata> {
       locale: "pt_BR",
       images: [
         {
-          url: new URL("/og.png", base).toString(),
-          width: 1733,
-          height: 907,
+          url: new URL("/soulscapes-menu.png", base).toString(),
+          width: 1216,
+          height: 774,
           alt: "Soulscapes — um jogo sobre encontrar calma",
         },
       ],
@@ -35,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title: "Soulscapes",
       description,
-      images: [new URL("/og.png", base).toString()],
+      images: [new URL("/soulscapes-menu.png", base).toString()],
     },
   };
 }

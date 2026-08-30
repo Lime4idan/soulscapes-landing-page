@@ -98,8 +98,8 @@ export default function Home() {
           <div className="hero-body">
             <div className="hero-art-wrap">
               <img
-                src="/og.png"
-                alt="Soulscapes: uma criança em uma floresta azul, tranquila e pintada em aquarela"
+                src="/soulscapes-menu.png"
+                alt="Tela inicial de Soulscapes com uma criança em uma floresta azul e os botões Novo Jogo, Continuar e Créditos"
                 className="hero-art"
               />
               <span className="demo-sticker">DEMO 2026</span>

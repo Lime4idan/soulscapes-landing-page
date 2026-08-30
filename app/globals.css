@@ -168,9 +168,7 @@ a { color: inherit; }
 .hero-art {
   width: 100%;
   height: auto;
-  aspect-ratio: 1.91 / 1;
   display: block;
-  object-fit: cover;
 }
 
 .demo-sticker {
