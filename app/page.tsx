@@ -216,21 +216,14 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="settings-card" aria-label="Exemplo de configurações sensoriais">
-              <div className="settings-title"><span>Perfil: Calmo</span><span>salvo ✓</span></div>
-              {[
-                ["Luz", "Suave", "32%"],
-                ["Som", "Baixo", "24%"],
-                ["Movimento", "Lento", "18%"],
-                ["Partículas", "Poucas", "28%"],
-              ].map(([label, value, width]) => (
-                <div className="setting" key={label}>
-                  <div><span>{label}</span><strong>{value}</strong></div>
-                  <div className="slider-track"><span style={{ width }} /></div>
-                </div>
-              ))}
-              <button type="button" className="retro-confirm">Aplicar configurações</button>
-            </div>
+            <figure className="settings-image-card">
+              <img
+                src="/soulscapes-sensory-settings.png"
+                alt="Tela Pause sensorial de Soulscapes com controles de volume, modo de baixo estímulo, animações, velocidade e tamanho do texto e contraste"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
           </div>
         </section>
 
