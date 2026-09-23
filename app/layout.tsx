@@ -10,24 +10,24 @@ export async function generateMetadata(): Promise<Metadata> {
     (host.includes("localhost") ? "http" : "https");
   const base = new URL(`${protocol}://${host}`);
   const description =
-    "Soulscapes é uma experiência calma e sensorialmente acessível para computador. Jogue a demo grátis no GX.Games.";
+    "Soulscapes is a calm, sensory-friendly desktop experience. Play the free demo on GX.Games.";
 
   return {
     metadataBase: base,
-    title: "Soulscapes — um jogo sobre encontrar calma",
+    title: "Soulscapes — a game about finding calm",
     description,
     icons: { icon: "/soulscapes-menu.png" },
     openGraph: {
       title: "Soulscapes",
       description,
       type: "website",
-      locale: "pt_BR",
+      locale: "en_US",
       images: [
         {
           url: new URL("/soulscapes-menu.png", base).toString(),
           width: 1216,
           height: 774,
-          alt: "Soulscapes — um jogo sobre encontrar calma",
+          alt: "Soulscapes — a game about finding calm",
         },
       ],
     },
@@ -46,7 +46,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR">
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

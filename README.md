@@ -1,28 +1,28 @@
-# Soulscapes
+# Soulscapes landing page
 
-Landing page de **Soulscapes**, um jogo sobre encontrar calma.
+Official landing page for **Soulscapes**, a gentle game about finding calm.
 
 ## Links
 
-- [Acessar a landing page](https://soulscapes-demo-2026.harutsu1dinofayri.chatgpt.site)
-- [Jogar a demo no GX.Games](https://gx.games/games/bdwxxw/soulscapes-demo-2026/)
+- [Open the landing page](https://soulscapes-demo-2026.harutsu1dinofayri.chatgpt.site)
+- [Play the demo on GX.Games](https://gx.games/games/bdwxxw/soulscapes-demo-2026/)
 
-> A demo está disponível somente para computador. O jogo não funciona em celulares ou tablets.
+> The demo is available on desktop only. It does not support phones or tablets.
 
-## Sobre o projeto
+## About
 
-A página apresenta o universo do jogo, seus recursos de acessibilidade sensorial e um atalho direto para a demo. O design responsivo combina a estética de um desktop retrô com as ilustrações em aquarela de Soulscapes.
+The page introduces the world of Soulscapes, highlights its sensory accessibility features, and provides a direct link to the demo. Its responsive interface combines a nostalgic desktop aesthetic with the game's watercolor artwork.
 
-## Desenvolvimento local
+## Local development
 
-Requer Node.js 22.13 ou mais recente.
+Requires Node.js 22.13 or newer.
 
 ```bash
 npm install
 npm run dev
 ```
 
-Para validar a versão de produção:
+To validate a production build:
 
 ```bash
 npm run build

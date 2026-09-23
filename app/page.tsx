@@ -4,27 +4,27 @@ const GAME_URL =
 const features = [
   {
     number: "01",
-    title: "Nada que te assuste",
+    title: "Nothing designed to scare you",
     description:
-      "Sem jumpscares, flashes ou sons repentinos. Cada elemento foi pensado para não sobrecarregar.",
+      "No jump scares, flashing lights, or sudden sounds. Every element is designed to avoid sensory overload.",
   },
   {
     number: "02",
-    title: "Você controla os estímulos",
+    title: "You control the sensory input",
     description:
-      "Ajuste luz, som, movimento e partículas até o mundo ficar confortável para você.",
+      "Adjust light, sound, motion, and particles until the world feels comfortable to you.",
   },
   {
     number: "03",
-    title: "Sem score. Sem game over.",
+    title: "No score. No game over.",
     description:
-      "Não existe perder, ranking ou cronômetro. O ritmo da experiência é inteiramente seu.",
+      "There is no losing, leaderboard, or timer. The pace of the experience is entirely yours.",
   },
   {
     number: "04",
-    title: "Paisagens que respiram",
+    title: "Landscapes that breathe",
     description:
-      "Ambientes delicados mudam de cor, forma e som conforme você explora e interage.",
+      "Delicate environments shift in color, shape, and sound as you explore and interact.",
   },
 ];
 
@@ -45,10 +45,10 @@ function PlayLink({ className = "" }: { className?: string }) {
       href={GAME_URL}
       target="_blank"
       rel="noreferrer"
-      aria-label="Jogar Soulscapes no GX.Games (abre em uma nova aba)"
+      aria-label="Play Soulscapes on GX.Games (opens in a new tab)"
     >
       <span aria-hidden="true">▶</span>
-      Jogar agora
+      Play now
     </a>
   );
 }
@@ -57,29 +57,29 @@ export default function Home() {
   return (
     <div className="desktop-shell">
       <a className="skip-link" href="#conteudo">
-        Ir para o conteúdo
+        Skip to content
       </a>
 
-      <nav className="desktop-icons" aria-label="Atalhos da página">
+      <nav className="desktop-icons" aria-label="Page shortcuts">
         <a href="#inicio" className="desktop-icon">
           <span aria-hidden="true">🎮</span>
           <small>SOULSCAPES<br />.exe</small>
         </a>
         <a href="#sobre" className="desktop-icon">
           <span aria-hidden="true">📄</span>
-          <small>sobre.txt</small>
+          <small>about.txt</small>
         </a>
         <a href="#recursos" className="desktop-icon">
           <span aria-hidden="true">📋</span>
-          <small>recursos.doc</small>
+          <small>features.doc</small>
         </a>
         <a href="#sensorial" className="desktop-icon">
           <span aria-hidden="true">⚙️</span>
-          <small>sensorial</small>
+          <small>sensory</small>
         </a>
         <a href={GAME_URL} target="_blank" rel="noreferrer" className="desktop-icon">
           <span aria-hidden="true">💗</span>
-          <small>jogar.url</small>
+          <small>play.url</small>
         </a>
       </nav>
 
@@ -99,71 +99,70 @@ export default function Home() {
             <div className="hero-art-wrap">
               <img
                 src="/soulscapes-menu.png"
-                alt="Tela inicial de Soulscapes com uma criança em uma floresta azul e os botões Novo Jogo, Continuar e Créditos"
+                alt="Soulscapes title screen showing a child in a blue forest with New Game, Continue, and Credits buttons"
                 className="hero-art"
               />
               <span className="demo-sticker">DEMO 2026</span>
             </div>
 
             <div className="hero-copy">
-              <p className="eyebrow">UMA PAUSA DISFARÇADA DE JOGO</p>
-              <h1 id="hero-heading">Um lugar onde você não precisa ter pressa.</h1>
+              <p className="eyebrow">A PAUSE DISGUISED AS A GAME</p>
+              <h1 id="hero-heading">A place where you never have to rush.</h1>
               <p className="hero-description">
-                Explore paisagens serenas, encontre pequenos momentos de cuidado
-                e ajuste cada estímulo ao seu jeito. Sem pressão. Sem perder.
+                Explore serene landscapes, find small moments of care, and adjust
+                every sensory detail your way. No pressure. No losing.
               </p>
               <div className="hero-actions">
                 <PlayLink />
-                <a href="#sobre" className="secondary-button">Conhecer o jogo</a>
+                <a href="#sobre" className="secondary-button">Discover the game</a>
               </div>
               <p className="platform-line">
-                <span className="online-dot" aria-hidden="true" /> Demo disponível no GX.Games
+                <span className="online-dot" aria-hidden="true" /> Demo available on GX.Games
               </p>
               <div className="platform-notice" role="note">
                 <span className="device-icon" aria-hidden="true">🖥️</span>
                 <span>
-                  <strong>Somente para computador</strong>
-                  O jogo não está disponível para celulares ou tablets.
+                  <strong>Desktop only</strong>
+                  The game is not available on phones or tablets.
                 </span>
               </div>
             </div>
           </div>
 
           <div className="status-bar">
-            <span>Pronto</span>
+            <span>Ready</span>
             <span>SOULSCAPES.exe</span>
           </div>
         </section>
 
         <section id="sobre" className="window" aria-labelledby="about-heading">
           <div className="title-bar inactive">
-            <span>📄 sobre.txt — Bloco de Notas</span>
+            <span>📄 about.txt — Notepad</span>
             <WindowControls />
           </div>
           <div className="menu-bar" aria-hidden="true">
-            <span>Arquivo</span><span>Editar</span><span>Formatar</span><span>Ajuda</span>
+            <span>File</span><span>Edit</span><span>Format</span><span>Help</span>
           </div>
           <div className="notepad-grid">
             <div className="notepad-copy">
               <p className="typed-lead" id="about-heading">
-                Todo jogo te diz para ir mais rápido.<br />
-                Esse te convida a parar.<span className="caret" aria-hidden="true">_</span>
+                Every game tells you to move faster.<br />
+                This one invites you to pause.<span className="caret" aria-hidden="true">_</span>
               </p>
               <p>
-                Soulscapes nasceu para ser um refúgio: uma experiência curta e
-                acolhedora construída desde o início para respeitar diferentes
-                sensibilidades sensoriais.
+                Soulscapes was created as a refuge: a short, welcoming experience
+                designed from the start to respect different sensory needs.
               </p>
               <p>
-                Aqui, silêncio também é mecânica. Descansar também é progresso.
-                E você sempre pode seguir no seu próprio tempo.
+                Here, silence is a mechanic. Rest is progress. And you can always
+                move forward at your own pace.
               </p>
             </div>
 
             <blockquote className="quote-card">
               <span className="quote-mark" aria-hidden="true">“</span>
-              <p>É o primeiro jogo que eu não precisei fechar.</p>
-              <cite>Participante dos playtests</cite>
+              <p>It is the first game I did not feel the need to close.</p>
+              <cite>Playtest participant</cite>
             </blockquote>
           </div>
           <div className="status-bar">
@@ -173,18 +172,18 @@ export default function Home() {
 
         <section id="recursos" className="window" aria-labelledby="features-heading">
           <div className="title-bar active">
-            <span>📋 recursos.doc — Soulscapes</span>
+            <span>📋 features.doc — Soulscapes</span>
             <WindowControls />
           </div>
           <div className="toolbar" aria-hidden="true">
             <span className="tool-bold">B</span><span className="tool-italic">I</span><span className="tool-under">U</span>
             <i />
-            <span>Alinhar</span><span>Recuo</span><span>Revisão</span>
+            <span>Align</span><span>Indent</span><span>Review</span>
           </div>
           <div className="document-sheet">
             <div className="section-heading">
-              <p>DESIGN ACESSÍVEL POR CONSTRUÇÃO</p>
-              <h2 id="features-heading">O que faz Soulscapes diferente</h2>
+              <p>ACCESSIBLE BY DESIGN</p>
+              <h2 id="features-heading">What makes Soulscapes different</h2>
             </div>
             <div className="feature-list">
               {features.map((feature) => (
@@ -199,34 +198,34 @@ export default function Home() {
             </div>
           </div>
           <div className="status-bar">
-            <span>Página 1 de 1</span><span>Português (Brasil)</span>
+            <span>Page 1 of 1</span><span>English</span>
           </div>
         </section>
 
         <section id="sensorial" className="window sensory-window" aria-labelledby="sensory-heading">
           <div className="title-bar inactive">
-            <span>⚙️ Configurações — Perfil sensorial</span>
+            <span>⚙️ Settings — Sensory profile</span>
             <WindowControls />
           </div>
           <div className="sensory-layout">
             <div className="sensory-copy">
-              <p className="eyebrow">SEU CONFORTO VEM PRIMEIRO</p>
-              <h2 id="sensory-heading">O mundo se adapta a você.</h2>
+              <p className="eyebrow">YOUR COMFORT COMES FIRST</p>
+              <h2 id="sensory-heading">The world adapts to you.</h2>
               <p>
-                Antes mesmo de começar, escolha a intensidade ideal. As opções
-                podem ser alteradas a qualquer momento.
+                Choose the right intensity before you begin. Every option can be
+                changed at any time.
               </p>
               <ul className="check-list">
-                <li>Sem surpresas visuais ou sonoras</li>
-                <li>Movimento e partículas ajustáveis</li>
-                <li>Interface simples, clara e previsível</li>
+                <li>No sudden visual or audio surprises</li>
+                <li>Adjustable motion and particles</li>
+                <li>A simple, clear, and predictable interface</li>
               </ul>
             </div>
 
             <figure className="settings-image-card">
               <img
                 src="/soulscapes-sensory-settings.png"
-                alt="Tela Pause sensorial de Soulscapes com controles de volume, modo de baixo estímulo, animações, velocidade e tamanho do texto e contraste"
+                alt="Soulscapes sensory break screen with controls for volume, low-stimulation mode, animation, text speed and size, and contrast"
                 loading="lazy"
                 decoding="async"
               />
@@ -236,41 +235,41 @@ export default function Home() {
 
         <section className="window cta-window" aria-labelledby="cta-heading">
           <div className="title-bar pink">
-            <span>💗 jogar.url — Internet Explorer</span>
+            <span>💗 play.url — Internet Explorer</span>
             <WindowControls />
           </div>
           <div className="browser-bar" aria-hidden="true">
             <span>←</span><span>→</span><span>⌂</span>
             <div>https://gx.games/games/bdwxxw/soulscapes-demo-2026/</div>
-            <span>Ir</span>
+            <span>Go</span>
           </div>
           <div className="cta-body">
             <div className="leaf" aria-hidden="true">⌁</div>
-            <p className="eyebrow">A FLORESTA ESTÁ ESPERANDO</p>
-            <h2 id="cta-heading">Respire. Entre quando quiser.</h2>
-            <p>A demo de Soulscapes já pode ser jogada gratuitamente no GX.Games, somente pelo computador.</p>
+            <p className="eyebrow">THE FOREST IS WAITING</p>
+            <h2 id="cta-heading">Breathe. Enter when you are ready.</h2>
+            <p>The Soulscapes demo is free to play on GX.Games on desktop computers.</p>
             <PlayLink className="play-button-large" />
-            <small>Não disponível para celular ou tablet · o jogo será aberto em uma nova aba.</small>
+            <small>Not available on phones or tablets · the game opens in a new tab.</small>
           </div>
           <div className="status-bar">
-            <span>🔒 Concluído</span><span>Internet</span>
+            <span>🔒 Done</span><span>Internet</span>
           </div>
         </section>
 
         <footer className="site-footer">
           <span>SOULSCAPES © 2026</span>
-          <span>Feito com calma.</span>
+          <span>Made with calm.</span>
         </footer>
       </main>
 
-      <div className="taskbar" aria-label="Barra inferior">
+      <div className="taskbar" aria-label="Taskbar">
         <a href="#inicio" className="start-button">
           <span className="start-logo" aria-hidden="true"><i /><i /><i /><i /></span>
-          Iniciar
+          Start
         </a>
         <a href="#inicio" className="task-item active">🎮 SOULSCAPES.exe</a>
-        <a href="#sobre" className="task-item">📄 sobre.txt</a>
-        <a href={GAME_URL} target="_blank" rel="noreferrer" className="task-item task-play">▶ Jogar</a>
+        <a href="#sobre" className="task-item">📄 about.txt</a>
+        <a href={GAME_URL} target="_blank" rel="noreferrer" className="task-item task-play">▶ Play</a>
         <div className="task-tray"><span aria-hidden="true">🔊</span><span>online</span></div>
       </div>
     </div>
