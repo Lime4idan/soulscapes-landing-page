@@ -13,7 +13,7 @@ The official home of a gentle journey through memories, emotions, and inner land
 
 A responsive promotional website for **Soulscapes**, a sensory-friendly narrative game about finding calm.
 
-[Open the website](https://soulscapes-demo-2026.harutsu1dinofayri.chatgpt.site) · [Play the demo](https://gx.games/games/bdwxxw/soulscapes-demo-2026/) · [View the game repository](https://github.com/Lime4idan/SOULSCAPES.0.1)
+[Play the demo](https://gx.games/games/bdwxxw/soulscapes-demo-2026/) · [View the game repository](https://github.com/Lime4idan/SOULSCAPES.0.1)
 
 </div>
 
@@ -43,7 +43,7 @@ The landing page introduces the world of Soulscapes, presents its story and acce
 | Language | TypeScript |
 | Interface | React components and responsive CSS |
 | Fonts | Google Fonts |
-| Deployment | OpenAI Sites |
+| Deployment | Vercel-ready |
 
 ## Run locally
 
