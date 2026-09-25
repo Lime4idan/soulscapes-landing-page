@@ -11,6 +11,20 @@ type Language = "en" | "pt" | "es";
 const copy = {
   en: {
     htmlLang: "en",
+    pageTitle: "Soulscapes — a game about finding calm",
+    mainMenuLabel: "Main menu",
+    languageLabel: "Language",
+    shortcutsLabel: "Page shortcuts",
+    sectionsLabel: "Soulscapes sections",
+    homeLabel: "Soulscapes home",
+    narrativeBadge: "NARRATIVE",
+    gameplayBadge: "2D · STORY",
+    accessibilityBadge: "ACCESSIBILITY",
+    developmentBadge: "IN DEVELOPMENT",
+    taskbarLabel: "Taskbar",
+    start: "START",
+    heroImageAlt: "Soulscapes game menu in a blue watercolor forest",
+    settingsImageAlt: "Soulscapes sensory settings screen",
     skip: "Skip to content",
     menu: ["PLAY", "STORY", "EXPLORE", "COMFORT"],
     path: "/games/soulscapes/welcome.exe",
@@ -55,6 +69,20 @@ const copy = {
   },
   pt: {
     htmlLang: "pt-BR",
+    pageTitle: "Soulscapes — um jogo sobre encontrar calma",
+    mainMenuLabel: "Menu principal",
+    languageLabel: "Idioma",
+    shortcutsLabel: "Atalhos da página",
+    sectionsLabel: "Seções de Soulscapes",
+    homeLabel: "Início de Soulscapes",
+    narrativeBadge: "NARRATIVA",
+    gameplayBadge: "2D · HISTÓRIA",
+    accessibilityBadge: "ACESSIBILIDADE",
+    developmentBadge: "EM DESENVOLVIMENTO",
+    taskbarLabel: "Barra de tarefas",
+    start: "INICIAR",
+    heroImageAlt: "Menu de Soulscapes em uma floresta azul pintada em aquarela",
+    settingsImageAlt: "Tela de ajustes sensoriais de Soulscapes",
     skip: "Pular para o conteúdo",
     menu: ["JOGAR", "HISTÓRIA", "EXPLORAR", "CONFORTO"],
     path: "/jogos/soulscapes/bem-vindo.exe",
@@ -99,6 +127,20 @@ const copy = {
   },
   es: {
     htmlLang: "es",
+    pageTitle: "Soulscapes — un juego sobre encontrar calma",
+    mainMenuLabel: "Menú principal",
+    languageLabel: "Idioma",
+    shortcutsLabel: "Accesos directos de la página",
+    sectionsLabel: "Secciones de Soulscapes",
+    homeLabel: "Inicio de Soulscapes",
+    narrativeBadge: "NARRATIVA",
+    gameplayBadge: "2D · HISTORIA",
+    accessibilityBadge: "ACCESIBILIDAD",
+    developmentBadge: "EN DESARROLLO",
+    taskbarLabel: "Barra de tareas",
+    start: "INICIO",
+    heroImageAlt: "Menú de Soulscapes en un bosque azul pintado en acuarela",
+    settingsImageAlt: "Pantalla de ajustes sensoriales de Soulscapes",
     skip: "Saltar al contenido",
     menu: ["JUGAR", "HISTORIA", "EXPLORAR", "CONFORT"],
     path: "/juegos/soulscapes/bienvenida.exe",
@@ -152,29 +194,51 @@ export default function Home() {
   const t = copy[language];
 
   useEffect(() => {
+    const savedLanguage = window.localStorage.getItem("soulscapes-language");
+    const browserLanguage = window.navigator.language.toLowerCase();
+    const initialLanguage: Language =
+      savedLanguage === "pt" || savedLanguage === "en" || savedLanguage === "es"
+        ? savedLanguage
+        : browserLanguage.startsWith("pt")
+          ? "pt"
+          : browserLanguage.startsWith("es")
+            ? "es"
+            : "en";
+
+    setLanguage(initialLanguage);
+    window.localStorage.setItem("soulscapes-language", initialLanguage);
+  }, []);
+
+  useEffect(() => {
     document.documentElement.lang = t.htmlLang;
-  }, [t.htmlLang]);
+    document.title = t.pageTitle;
+  }, [t.htmlLang, t.pageTitle]);
+
+  function chooseLanguage(nextLanguage: Language) {
+    setLanguage(nextLanguage);
+    window.localStorage.setItem("soulscapes-language", nextLanguage);
+  }
 
   return (
     <div className="soul-desktop">
       <a className="skip-link" href="#content">{t.skip}</a>
       <header className="system-bar">
-        <a className="brand-button" href="#home" aria-label="Soulscapes home">S</a>
-        <nav className="system-menu" aria-label="Main menu">
+        <a className="brand-button" href="#home" aria-label={t.homeLabel}>S</a>
+        <nav className="system-menu" aria-label={t.mainMenuLabel}>
           <a href={GAME_URL} target="_blank" rel="noreferrer">{t.menu[0]}</a>
           <a href="#story">{t.menu[1]}</a>
           <a href="#gameplay">{t.menu[2]}</a>
           <a href="#sensory">{t.menu[3]}</a>
         </nav>
         <span className="system-path">{t.path}</span>
-        <div className="language-switch" aria-label="Language">
+        <div className="language-switch" aria-label={t.languageLabel}>
           {(["pt", "en", "es"] as Language[]).map((lang) => (
-            <button key={lang} type="button" onClick={() => setLanguage(lang)} aria-pressed={language === lang}>{lang.toUpperCase()}</button>
+            <button key={lang} type="button" onClick={() => chooseLanguage(lang)} aria-pressed={language === lang}>{lang.toUpperCase()}</button>
           ))}
         </div>
       </header>
 
-      <nav className="desktop-shortcuts" aria-label="Page shortcuts">
+      <nav className="desktop-shortcuts" aria-label={t.shortcutsLabel}>
         {[
           ["home", "▣", t.nav.home, "blue"], ["story", "✦", t.nav.story, "pink"],
           ["gameplay", "⌘", t.nav.gameplay, "lavender"], ["sensory", "♡", t.nav.sensory, "sage"],
@@ -200,15 +264,15 @@ export default function Home() {
               </div>
               <p className="status-line"><span />{t.status}</p>
             </div>
-            <figure className="hero-image paper-photo"><Image src="/soulscapes-menu.png" alt="Soulscapes game menu in a blue watercolor forest" width={1216} height={774} priority /><figcaption>DEMO_0.1.PNG</figcaption></figure>
+            <figure className="hero-image paper-photo"><Image src="/soulscapes-menu.png" alt={t.heroImageAlt} width={1216} height={774} priority /><figcaption>DEMO_0.1.PNG</figcaption></figure>
           </section>
 
-          <nav className="folder-tabs" aria-label="Soulscapes sections">
+          <nav className="folder-tabs" aria-label={t.sectionsLabel}>
             <a href="#story">{t.nav.story}</a><a href="#gameplay">{t.nav.gameplay}</a><a href="#sensory">{t.nav.sensory}</a><a href="#project">{t.nav.project}</a>
           </nav>
 
           <section className="content-card story-card" id="story">
-            <div className="card-heading"><div><p>{t.storyLabel}</p><h2>{t.storyTitle}</h2></div><span>NARRATIVE</span></div>
+            <div className="card-heading"><div><p>{t.storyLabel}</p><h2>{t.storyTitle}</h2></div><span>{t.narrativeBadge}</span></div>
             <div className="story-grid">
               <div className="text-panel"><p>{t.storyP1}</p><p>{t.storyP2}</p></div>
               <div className="route-panel"><strong>{t.routeTitle}</strong><ol>{t.route.map((item, index) => <li key={item}><span>{String(index + 1).padStart(2, "0")}</span>{item}</li>)}</ol></div>
@@ -216,7 +280,7 @@ export default function Home() {
           </section>
 
           <section className="content-card" id="gameplay">
-            <div className="card-heading"><div><p>{t.gameplayLabel}</p><h2>{t.gameplayTitle}</h2></div><span>2D · STORY</span></div>
+            <div className="card-heading"><div><p>{t.gameplayLabel}</p><h2>{t.gameplayTitle}</h2></div><span>{t.gameplayBadge}</span></div>
             <p className="section-intro">{t.gameplayIntro}</p>
             <div className="gameplay-grid">
               {t.gameplay.map(([title, description], index) => <article className="gameplay-item" key={title}><span>{String(index + 1).padStart(2, "0")}</span><h3>{title}</h3><p>{description}</p></article>)}
@@ -225,15 +289,15 @@ export default function Home() {
           </section>
 
           <section className="content-card sensory-card" id="sensory">
-            <div className="card-heading"><div><p>{t.sensoryLabel}</p><h2>{t.sensoryTitle}</h2></div><span>ACCESSIBILITY</span></div>
+            <div className="card-heading"><div><p>{t.sensoryLabel}</p><h2>{t.sensoryTitle}</h2></div><span>{t.accessibilityBadge}</span></div>
             <div className="sensory-grid">
-              <figure className="settings-shot"><Image src="/soulscapes-sensory-settings.png" alt="Soulscapes sensory settings screen" width={1264} height={858} /></figure>
+              <figure className="settings-shot"><Image src="/soulscapes-sensory-settings.png" alt={t.settingsImageAlt} width={1264} height={858} /></figure>
               <div className="sensory-copy"><p>{t.sensoryText}</p><ul>{t.sensoryItems.map((item) => <li key={item}>✓ {item}</li>)}</ul></div>
             </div>
           </section>
 
           <section className="content-card project-card" id="project">
-            <div className="card-heading"><div><p>{t.projectLabel}</p><h2>{t.projectTitle}</h2></div><span>IN DEVELOPMENT</span></div>
+            <div className="card-heading"><div><p>{t.projectLabel}</p><h2>{t.projectTitle}</h2></div><span>{t.developmentBadge}</span></div>
             <div className="project-grid">
               <div className="project-copy"><p>{t.projectText}</p><a className="retro-button" href={REPO_URL} target="_blank" rel="noreferrer">⌘ {t.repo}</a></div>
               <dl className="project-meta">{t.projectMeta.map(([label, value]) => <div key={label}><dt>{label}</dt><dd>{value}</dd></div>)}</dl>
@@ -245,8 +309,8 @@ export default function Home() {
         </div>
       </main>
 
-      <footer className="taskbar" aria-label="Taskbar">
-        <a href="#home" className="start-button">✦ START</a><a href="#home" className="task-item active">▣ SOULSCAPES.EXE</a><a href="#story" className="task-item">✦ {t.nav.story}</a><a href={GAME_URL} target="_blank" rel="noreferrer" className="task-item play-task">▶ {t.play}</a><span className="task-status">♡ DEMO 0.1</span>
+      <footer className="taskbar" aria-label={t.taskbarLabel}>
+        <a href="#home" className="start-button">✦ {t.start}</a><a href="#home" className="task-item active">▣ SOULSCAPES.EXE</a><a href="#story" className="task-item">✦ {t.nav.story}</a><a href={GAME_URL} target="_blank" rel="noreferrer" className="task-item play-task">▶ {t.play}</a><span className="task-status">♡ DEMO 0.1</span>
       </footer>
     </div>
   );
