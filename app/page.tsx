@@ -159,7 +159,7 @@ export default function Home() {
     <div className="soul-desktop">
       <a className="skip-link" href="#content">{t.skip}</a>
       <header className="system-bar">
-        <a className="brand-button" href="#home" aria-label="Soulscapes home">SS</a>
+        <a className="brand-button" href="#home" aria-label="Soulscapes home">S</a>
         <nav className="system-menu" aria-label="Main menu">
           <a href={GAME_URL} target="_blank" rel="noreferrer">{t.menu[0]}</a>
           <a href="#story">{t.menu[1]}</a>
