@@ -159,8 +159,9 @@ img { max-width: 100%; }
   .system-menu, .system-path { display: none; }
   .language-switch { margin-left: auto; }
   .language-switch button { min-width: 36px; padding-inline: 4px; }
-  .browser-window { border-width: 4px; box-shadow: 7px 7px 0 color-mix(in srgb, var(--purple) 78%, transparent); }
-  .window-titlebar { min-height: 44px; grid-template-columns: 34px 1fr auto; padding: 5px; font-size: .48rem; }
+  .browser-window { min-width: 0; overflow: hidden; border-width: 4px; box-shadow: 7px 7px 0 color-mix(in srgb, var(--purple) 78%, transparent); }
+  .window-titlebar { min-height: 44px; grid-template-columns: 34px minmax(0, 1fr) auto; padding: 5px; font-size: .48rem; }
+  .window-titlebar > span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
   .back-button { width: 29px; height: 29px; }
   .window-controls i { width: 25px; height: 25px; border-width: 2px; }
   .window-controls i:nth-child(1), .window-controls i:nth-child(2) { display: none; }
@@ -168,30 +169,43 @@ img { max-width: 100%; }
   .browser-bar > span { min-height: 31px; }
   .browser-bar > span:last-child { display: none; }
   .browser-bar > span:nth-child(2) { font-size: .66rem; }
-  .hero-section { padding: 38px 22px 47px; gap: 38px; }
-  .hero-copy h1 { font-size: clamp(1.72rem, 9.5vw, 2.55rem); }
-  .hero-copy h2 { font-size: 1.55rem; }
+  .hero-section { min-width: 0; padding: 34px 17px 42px; gap: 34px; }
+  .hero-copy, .paper-photo { min-width: 0; }
+  .hero-copy h1 { max-width: 100%; overflow-wrap: anywhere; font-size: clamp(1.32rem, 7vw, 1.85rem); line-height: 1.28; letter-spacing: -.07em; }
+  .hero-copy h2 { font-size: 1.38rem; line-height: 1.2; }
   .lead { font-size: .93rem; }
   .hero-actions { align-items: stretch; flex-direction: column; }
   .retro-button { width: 100%; }
   .paper-photo { padding: 7px 7px 29px; box-shadow: 6px 6px 0 var(--lavender); }
-  .folder-tabs { min-height: 79px; padding: 14px 8px 0; grid-template-columns: repeat(4, minmax(0, 1fr)); overflow: hidden; }
-  .folder-tabs a { min-height: 48px; padding: 14px 4px 9px; border-width: 3px; font-size: .39rem; }
-  .content-card { margin: 42px 14px; padding: 24px 18px; box-shadow: 6px 6px 0 var(--purple); }
+  .folder-tabs { min-height: 79px; padding: 14px 8px 0; display: flex; gap: 5px; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x proximity; scrollbar-width: thin; }
+  .folder-tabs a { min-height: 48px; flex: 0 0 43%; padding: 14px 6px 9px; scroll-snap-align: start; border-width: 3px; font-size: .43rem; }
+  .content-card { min-width: 0; margin: 36px 10px; padding: 21px 15px; box-shadow: 6px 6px 0 var(--purple); }
+  .content-card * { min-width: 0; }
   .card-heading { align-items: flex-start; flex-direction: column-reverse; gap: 16px; }
-  .card-heading h2 { font-size: 1.55rem; }
+  .card-heading h2 { overflow-wrap: anywhere; font-size: 1.34rem; }
   .story-grid, .sensory-grid, .project-grid { grid-template-columns: 1fr; }
   .text-panel, .route-panel, .sensory-copy, .project-copy { padding: 19px; }
   .gameplay-grid { grid-template-columns: 1fr; }
   .gameplay-item { min-height: 0; }
   .controls-panel dl { grid-template-columns: 1fr 1fr; }
   .project-meta { grid-template-columns: 1fr; }
-  .final-card { margin: 48px 14px; padding: 41px 19px; box-shadow: 7px 7px 0 var(--blush); }
+  .final-card { min-width: 0; margin: 42px 10px; padding: 36px 17px; box-shadow: 7px 7px 0 var(--blush); }
+  .final-card h2 { overflow-wrap: anywhere; font-size: 1.8rem; }
   .final-card .retro-button { width: 100%; }
   .site-footer { padding: 18px; align-items: flex-start; flex-direction: column; }
-  .task-item { display: none; }
-  .play-task { display: inline-flex; }
-  .task-status { font-size: .39rem; }
+  .start-button, .task-item, .task-status { display: none; }
+  .play-task { width: auto; display: inline-flex; flex: 1; }
+}
+
+@media (max-width: 390px) {
+  .language-switch { gap: 2px; }
+  .language-switch button { min-width: 33px; }
+  .hero-section { padding-inline: 14px; }
+  .hero-copy h1 { font-size: 1.28rem; }
+  .content-card { margin-inline: 7px; padding-inline: 13px; }
+  .text-panel, .route-panel, .sensory-copy, .project-copy, .gameplay-item, .controls-panel { padding: 16px; }
+  .controls-panel dl { grid-template-columns: 1fr; }
+  .folder-tabs a { flex-basis: 48%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
