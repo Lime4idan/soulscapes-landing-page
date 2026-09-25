@@ -19,6 +19,14 @@ A responsive promotional website for **Soulscapes**, a sensory-friendly narrativ
 
 ---
 
+## Preview
+
+![Soulscapes landing page in Portuguese, showing the desktop-inspired interface and game artwork](docs/soulscapes-preview.png)
+
+The page is available in Portuguese, English, and Spanish. The selected language is saved in the browser for the next visit.
+
+---
+
 ## About the project
 
 The landing page introduces the world of Soulscapes, presents its story and accessibility features, and guides visitors directly to the playable demo. Its visual direction combines watercolor artwork with a nostalgic desktop-inspired interface that complements the atmosphere of the game.
@@ -34,6 +42,7 @@ The landing page introduces the world of Soulscapes, presents its story and acce
 - Watercolor-inspired art direction
 - Metadata prepared for search engines and social sharing
 - Direct connection to the Soulscapes game experience
+- Complete PT / EN / ES content with persistent language selection
 
 ## Technology
 
